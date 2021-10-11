@@ -1,0 +1,51 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Inventory {
+    -HashMap<String, Product> products;
+    +Inventory(String productJSON)
+    +Product getProduct(String productName)
+    +boolean productExists(String productName)
+    +String getProductReport(String productName)
+}
+
+class Product {
+    -String name
+    -double price
+    -int quantity
+    +Product(String name, double price, int quantity)
+    +Product()
+    +String getName()
+    +double getPrice()
+    +int getQuantity()
+    +String getProductReport()
+}
+
+class ExerciseInput {
+    -Product[] products
+    +ExerciseInput()
+    +Product[] getProducts()
+}
+
+class PromptInput {
+    -Scanner scan
+    +PromptInput(Scanner scan)
+    +String promptLine(String prompt)
+}
+
+class App {
+    {static} void main(String[] args)
+}
+
+class ExerciseConstants {
+    +{static} String INPUT_FILENAME
+}
+
+Inventory *-- Product
+App *-- Inventory
+ExerciseInput *-- Product
+Inventory *-- ExerciseInput
+App *-- PromptInput
+App o-- ExerciseConstants
+
+@enduml

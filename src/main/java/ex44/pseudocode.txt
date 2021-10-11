@@ -1,2 +1,15 @@
-data = parseJSON(input)
+data = new Inventory(parseJSON(input));
 
+while (true) {
+    productSearch = prompt("What is the product name? ");
+
+    // Print out report
+    if (product exists in data) {
+        println("Name: " + product.name);
+        println("Price: " + product.price);
+        println("Quantity: " + product.quantity);
+        break loop;
+    } else {
+        println("Sorry, that product was not found in our inventory");
+    }
+}
