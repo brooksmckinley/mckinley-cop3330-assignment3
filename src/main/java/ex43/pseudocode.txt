@@ -1,0 +1,27 @@
+name = prompt("Site name: ");
+author = prompt("Author: ");
+javascript = prompt("Do you want a folder for JavaScript? ") == "y";
+css = prompt("Do you want a folder for CSS? ") == "y";
+
+mkdir("./website/" + name);
+writeOutput("./website" + name + "/index.html", generatePage(name, author));
+if (javascript) {
+    mkdir("./website" + name + "/js/");
+    println("Created " + "./website" + name + "/js/");
+}
+if (css) {
+    mkdir("./website" + name + "/css/");
+    println("Created " + "./website" + name + "/css/");
+}
+
+generatePage(name, author) {
+    return format("
+        <!DOCTYPE html>
+        <html>
+            <head>
+                <meta name="author" content="%s">
+                <title>%s</title>
+            </head>
+        </html>
+    ", author, name);
+}

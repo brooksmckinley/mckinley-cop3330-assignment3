@@ -1,0 +1,45 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class PromptInput {
+    -Scanner scan
+    +PromptInput(Scanner scan)
+    +String promptLine(String prompt)
+    +String promptLine(String prompt, String regex)
+    +boolean promptYesNo(String prompt)
+}
+
+class Website {
+    -String name
+    -String author
+    -boolean hasJS
+    -boolean hasCSS
+    --
+    +Website(String name, String author)
+    +String generateWebsiteTree()
+    +String getIndexHTML()
+    +String getIndexHTMLPath()
+    +String getRootDirectory()
+    +String getCSSDirectory()
+    +String getJSDirectory()
+    -- Getters--
+    +String getName()
+    +String getAuthor()
+    +boolean getHasJS()
+    +boolean getHasCSS()
+}
+
+class FileIO {
+    +{static} ArrayList<String> getRecords(String inputFilename)
+    +{static} void writeOutput(String outputFilename, String output)
+}
+
+class App {
+    {static} void main(String[] args)
+}
+
+App *-- Website
+App o-- PromptInput
+Website o-- FileIO
+
+@enduml
