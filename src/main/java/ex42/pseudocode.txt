@@ -18,7 +18,15 @@ getTableReport(String[][] records) {
     res.append("Last\tFirst\tSalary
                 --------------------------");
     for (record in records) {
-        res.append(record[1] + "\t" + record[2] + "\t" + record[3]);
+        res.append(record[1]);
+        for (last_spaces - record[1].length) {
+            res.append(' ')
+        }
+        res.append(record[2]);
+        for (first_spaces - record[2].length) {
+            res.append(' ')
+        }
+        res.append(record[3]);
     }
     return res;
 }

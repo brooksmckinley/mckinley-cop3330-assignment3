@@ -1,0 +1,30 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class App {
+    +{static} void main(String[] args)
+}
+
+class FileIO {
+    +{static} ArrayList<String> getRecords(String inputFilename)
+    +{static} void writeOutput(String outputFilename, String output)
+}
+
+class CSV {
+    #String[][] table
+    #{static} int LAST_SPACES
+    #{static} int FIRST_SPACES
+    +CSV(List<String> records)
+    +String getTableReport()
+}
+
+class ExerciseConstants {
+    +{static} String INPUT_FILENAME
+}
+
+
+App *-- CSV
+App o-- FileIO
+App o-- ExerciseConstants
+
+@enduml
