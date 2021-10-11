@@ -1,0 +1,28 @@
+readFile() {
+    while (file has more lines) {
+        lines.add(file.nextLine())
+    }
+    return lines;
+}
+
+parseCSV(List lines) {
+    for (line in lines) {
+        for (item in (line split at each comma)) {
+            records[i][j] = item;
+        }
+    }
+    return records;
+}
+
+getTableReport(String[][] records) {
+    res.append("Last\tFirst\tSalary
+                --------------------------");
+    for (record in records) {
+        res.append(record[1] + "\t" + record[2] + "\t" + record[3]);
+    }
+    return res;
+}
+
+lines = readFile();
+records = parseCSV(lines);
+println(getTableReport(records));

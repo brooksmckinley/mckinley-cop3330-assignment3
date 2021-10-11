@@ -10,8 +10,8 @@ class App {
 }
 
 class FileIO {
-    +{static} ArrayList<String> getNames(String inputFilename)
-    +{static} void writeOutput(String outputFilename)
+    +{static} ArrayList<String> getRecords(String inputFilename)
+    +{static} void writeOutput(String outputFilename, String output)
 }
 
 class ListOperator {

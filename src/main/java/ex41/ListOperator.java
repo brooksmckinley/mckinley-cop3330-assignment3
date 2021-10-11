@@ -17,4 +17,14 @@ public class ListOperator {
     public void sortList() {
         this.namesList.sort(null);
     }
+
+    public String getListReport() {
+        StringBuilder res = new StringBuilder();
+        res.append("Total of ").append(this.namesList.size()).append(" names").append('\n');
+        res.append("-----------------").append("\n");
+        for (String name : this.namesList) {
+            res.append(name).append("\n");
+        }
+        return res.toString();
+    }
 }
