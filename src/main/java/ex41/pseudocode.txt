@@ -1,0 +1,15 @@
+// Scan in input
+while (file has more lines) {
+    names.add(file.nextLine());
+}
+
+// Sort names
+names.sort();
+
+// Output names
+output = open("exercise41_output.txt");
+output.println("Total of " + names.length + " names");
+output.println("-----------------");
+for (name in names) {
+    output.println(name);
+}
