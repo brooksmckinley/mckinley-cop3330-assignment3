@@ -1,27 +1,35 @@
 @startuml
 'https://plantuml.com/class-diagram
 
-abstract class AbstractList
-abstract AbstractCollection
-interface List
-interface Collection
-
-List <|-- AbstractList
-Collection <|-- AbstractCollection
-
-Collection <|- List
-AbstractCollection <|- AbstractList
-AbstractList <|-- ArrayList
-
-class ArrayList {
-Object[] elementData
-size()
+class App {
+    +{static} void main(String[] args)
 }
 
-enum TimeUnit {
-DAYS
-HOURS
-MINUTES
+class FileIO {
+    +{static} ArrayList<String> getRecords(String inputFilename)
+    +{static} void writeOutput(String outputFilename, String output)
 }
+
+class PromptInput {
+    -Scanner scan
+    +PromptInput(Scanner scan)
+    +String promptLine(String prompt)
+}
+
+class LineReplacer {
+    -List<String> lines
+    +ListReplacer(List lines)
+    +void replace(String original, String replacement)
+    +String getOutput()
+}
+
+class ExerciseConstants {
+    +{static} String INPUT_FILENAME
+}
+
+App *-- LineReplacer
+App o-- FileIO
+App o-- ExerciseConstants
+App o-- PromptInput
 
 @enduml

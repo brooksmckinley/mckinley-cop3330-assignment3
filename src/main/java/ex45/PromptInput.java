@@ -3,7 +3,7 @@
  *  Copyright 2021 Brooks McKinley
  */
 
-package ex44;
+package ex45;
 
 import java.util.Scanner;
 

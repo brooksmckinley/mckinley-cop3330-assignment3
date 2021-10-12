@@ -1,0 +1,6 @@
+for (line in file) {
+    line.replaceAll("utilize", "use");
+    output.append(line)
+}
+
+write(output, outputFilename)
