@@ -1,0 +1,33 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class WordCounter {
+    -HashMap<String, Word> words
+    -int longestWord
+    +WordCounter()
+    +void countWords(String text)
+    +String getWordsReport()
+}
+
+class Word {
+    -String word
+    -int count
+    +Word(String word, int count)
+    +void incrementCount()
+    +String getWord()
+    +int getCount()
+}
+
+class App {
+    +{static} void main(String[] args)
+}
+
+class ExerciseConstants {
+    +{static} String INPUT_FILENAME
+}
+
+App *-- WordCounter
+App o-- ExerciseConstants
+WordCounter *-- Word
+
+@enduml

@@ -1,0 +1,21 @@
+// Process word count
+for (line in input) {
+    for (word in line) {
+        words[word]++;
+    }
+}
+
+// Convert words into a list for sorting
+for (word in words) {
+    wordList.add(word);
+}
+wordList.sort(in descending order)
+
+// Print output
+for (word in wordList) {
+    print(word + ": ");
+    for (0 through word.count) {
+        print("*")
+    }
+    print("\n")
+}
