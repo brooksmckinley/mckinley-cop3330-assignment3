@@ -17,7 +17,7 @@ public class App {
             PromptInput prompter = new PromptInput(new Scanner(System.in));
             while (true) {
                 String search = prompter.promptLine("What is the product name? ");
-                System.out.println(inventory.getProductReport(search));
+                System.out.print(inventory.getProductReport(search));
                 if (inventory.productExists(search)) {
                     // Break loop after successfully finding a product.
                     break;

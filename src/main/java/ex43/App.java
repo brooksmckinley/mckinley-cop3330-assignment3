@@ -15,6 +15,6 @@ public class App {
         boolean js = prompter.promptYesNo("Do you want a folder for JavaScript? ");
         boolean css = prompter.promptYesNo("Do you want a folder for CSS? ");
         Website site = new Website(name, author, js, css);
-        System.out.println(site.generateWebsiteTree());
+        System.out.print(site.generateWebsiteTree());
     }
 }

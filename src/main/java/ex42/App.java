@@ -11,6 +11,6 @@ public class App {
     public static void main(String[] args) {
         ArrayList<String> records = FileIO.getRecords(ExerciseConstants.INPUT_FILENAME);
         CSV csv = new CSV(records);
-        System.out.println(csv.getTableReport());
+        System.out.print(csv.getTableReport());
     }
 }
